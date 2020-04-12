@@ -64,3 +64,8 @@ html, body{
   .hr-black hr{
     border-top: 2px #b4b4b4 solid;      
   }
+
+  .card button{
+      background-color: brown;
+      color: white;
+  }
