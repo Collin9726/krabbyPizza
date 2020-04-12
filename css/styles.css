@@ -45,7 +45,7 @@ html, body{
     margin-bottom: 1em;
   }
 
-  .welcome h1{
+  .jumbotron h1{
       font-family: hothamFont;
       font-size: 7em;
   }
@@ -59,4 +59,8 @@ html, body{
 
   .pizza-photo img{
       width: 100%;
+  }
+
+  .hr-black hr{
+    border-top: 2px #b4b4b4 solid;      
   }
