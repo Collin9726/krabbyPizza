@@ -69,3 +69,22 @@ html, body{
       background-color: brown;
       color: white;
   }
+
+  .pizza-small img{
+    width: 25%;
+    padding-top: 7%;
+    cursor: pointer;
+  }
+
+  .pizza-medium img{
+    width: 32%;
+    padding-top: 3%;
+    cursor: pointer;
+  }
+
+  .pizza-large img{
+    width: 40%;
+    cursor: pointer;
+  }
+
+  
