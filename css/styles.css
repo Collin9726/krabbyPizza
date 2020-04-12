@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+@font-face{
+  font-family: 'hothamFont';
+  src: url(../fonts/HothamFreeDemo-L380G.ttf)
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    color: #222222;
+    scroll-behavior: smooth;
+  }
+
+  .jumbotron{
+    padding: 1em;
+    border-radius: 0%;
+    background-image: url(../images/jumbo-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    margin-bottom: 0rem;
+  }
+  
+  .jumbotron p{
+      font-size: 1.5em;
+  }
+
+  .padding{
+    padding-bottom: 2em;
+  }
+  
+  .welcome{
+    width: 75%;
+    margin: 0% auto;
+    padding-top: 2em;
+  }
+  
+  .welcome hr{
+    border-top: 4px white solid;
+    width: 95%;
+    margin-top: .3em;
+    margin-bottom: 1em;
+  }
+
+  .welcome h1{
+      font-family: hothamFont;
+      font-size: 7em;
+  }
+
+  .pizza-photo{
+      margin-left: 10%;
+      margin-right: 10%;
+      margin-top: 3em;
+      border: 20px white solid;
+  }
+
+  .pizza-photo img{
+      width: 100%;
+  }
