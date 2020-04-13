@@ -85,10 +85,12 @@ html, body{
   .pizza-large img{
     width: 40%;
     cursor: pointer;
-  }
+  }  
 
-  .custom-pizza{
-    background-color: #f4f4f4;
+  .pizza-large img:hover,
+  .pizza-medium img:hover,
+  .pizza-small img:hover{
+      opacity: 0.7;
   }
 
   .pizza-design{
@@ -102,7 +104,8 @@ html, body{
   footer{
     background-color: rgb(80, 59, 20);
     color: #d5d5d5;
-    padding-top: 2rem;
+    padding-top: 1rem;
+    margin-top: 2em;
   }
 
   hr.light{
@@ -121,4 +124,22 @@ html, body{
 
   .form-group{    
     line-height: 0%;
+  }
+
+  #myForm input{
+    color: black;
+  }
+
+  .pizza-design-small{
+    display: none;
+    background-color: #f4f4f4;
+    padding: 1em;
+  }
+
+  .pizza-sm-align{
+    display: none;
+  }
+
+  .pizza-sizes{
+    margin-bottom: 1em;
   }
