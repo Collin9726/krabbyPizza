@@ -1,8 +1,20 @@
 $(document).ready(function(){
     $(".pizza-small").click(function(){
-        $(".pizza-design-small").toggle();
-        $(".pizza-large").toggle();
-        $(".pizza-medium").toggle();
-        $(".pizza-sm-align").toggle();
+        $(".pizza-design-small").show();
+        $(".pizza-large").hide();
+        $(".pizza-medium").hide();
+        $(".pizza-sm-align").show();
+    });
+    $(".pizza-medium").click(function(){
+        $(".pizza-design-medium").show();
+        $(".pizza-small").hide();
+        $(".pizza-large").hide();
+        $(".pizza-md-align").show();
+    });
+    $(".pizza-large").click(function(){
+        $(".pizza-design-large").show();
+        $(".pizza-small").hide();
+        $(".pizza-medium").hide();
+        $(".pizza-lg-align").show();
     });
 });

@@ -136,7 +136,22 @@ html, body{
     padding: 1em;
   }
 
-  .pizza-sm-align{
+  .pizza-design-medium{
+    display: none;
+    background-color: #f4f4f4;
+    padding: 1em;
+  }
+
+  .pizza-design-large{
+    display: none;
+    background-color: #f4f4f4;
+    padding: 1em;
+  }
+
+
+  .pizza-sm-align,
+  .pizza-md-align,
+  .pizza-lg-align{
     display: none;
   }
 
