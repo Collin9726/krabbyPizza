@@ -118,3 +118,7 @@ html, body{
     margin-top: .8rem;
     margin-bottom: 1rem;
   }
+
+  .form-group{    
+    line-height: 0%;
+  }
