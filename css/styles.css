@@ -87,4 +87,34 @@ html, body{
     cursor: pointer;
   }
 
+  .custom-pizza{
+    background-color: #f4f4f4;
+  }
+
+  .pizza-design{
+    padding-top: 2em;
+  }
+
+  #footr{
+    font-family: hothamFont;
+  }
   
+  footer{
+    background-color: rgb(80, 59, 20);
+    color: #d5d5d5;
+    padding-top: 2rem;
+  }
+
+  hr.light{
+    border-top: 1px solid #d5d5d5;
+    width: 75%;
+    margin-top: .8rem;
+    margin-bottom: 1rem;
+  }
+  
+  hr.light-100{
+    border-top: 1px solid #d5d5d5;
+    width: 100%;
+    margin-top: .8rem;
+    margin-bottom: 1rem;
+  }
