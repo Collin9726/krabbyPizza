@@ -87,7 +87,7 @@
     </div>
     <hr>
     <!--custom pizza-->
-    <div class="container-fluid padding">
+    <div class="container-fluid">
         <div class="row padding welcome text-center hr-black">
             <div class="col-12">
                 <h1 class="display-4">Custom Pizzas</h1>
@@ -99,682 +99,274 @@
         </div>
     </div>    
     <!--custom pizza design-->
-    <div class="container custom-pizza">
-        <div class="pizza-design">
-            <form id="myForm">
-                <!--pizza sizes-->
-                <div class="row padding">
-                    <div class="col-12 text-center">
-                        <h5>Choose your pizza size.</h5>
+    <div class="container">
+        <form id="myForm">                
+            <div id="new-designs">
+                <div class="new-design">
+                    <div class="pizza-design-form">
+                        <div class="row padding">                        
+                            <div class="col-12 text-right">
+                                <span class="fa fa-times-circle"></span>
+                            </div>
+                        </div>
+                        <div class="row padding">
+                            <div class="col-12 form-group">
+                                <input type="text" class="form-control" placeholder="Name your pizza">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-5">
+                                <h5>Select size</h5><br>
+                                <div class="form-group form-check">
+                                    <input type="radio" name="size" value="large" checked>
+                                    <label>Large</label>
+                                </div>
+                                <div class="form-group form-check">
+                                    <input type="radio" name="size" value="medium">
+                                    <label>Medium</label>
+                                </div>
+                                <div class="form-group form-check">
+                                    <input type="radio" name="size" value="small">
+                                    <label>Small</label>
+                                </div>
+                                <div class="row padding"></div>
+                            </div>
+                            <div class="col-12 col-md-7">
+                                <h5>Choose crust</h5>
+                                <table class="table table-borderless table-hover table-sm">
+                                    <thead>
+                                        <th scope="col"></th>
+                                        <th scope="col">S</th>
+                                        <th scope="col">M</th>
+                                        <th scope="col">L</th>
+                                    </thead>                            
+                                    <tbody>
+                                        <tr>                                
+                                            <td>
+                                                <div class="form-group form-check">
+                                                    <input type="radio" name="sm-crust" value="" checked>
+                                                    <label>Thin crust</label>
+                                                </div>
+                                            </td>
+                                            <td>450</td>
+                                            <td>450</td>
+                                            <td>450</td>                                
+                                        </tr>
+                                        <tr>                                
+                                            <td>
+                                                <div class="form-group form-check">
+                                                    <input type="radio" name="sm-crust" value="">
+                                                    <label>Flatbread crust</label>
+                                                </div>
+                                            </td>
+                                            <td>400</td>
+                                            <td>450</td>
+                                            <td>450</td>                                
+                                        </tr>
+                                        <tr>                                
+                                            <td>
+                                                <div class="form-group form-check">
+                                                    <input type="radio" name="sm-crust" value="">
+                                                    <label>Thick crust</label>
+                                                </div>
+                                            </td>
+                                            <td>500</td>
+                                            <td>450</td>
+                                            <td>450</td>                                
+                                        </tr>
+                                        <tr>                                
+                                            <td>
+                                                <div class="form-group form-check">
+                                                    <input type="radio" name="sm-crust" value="">
+                                                    <label>Wood-Fired crust</label>
+                                                </div>
+                                            </td>
+                                            <td>450</td>
+                                            <td>450</td>
+                                            <td>450</td>                                
+                                        </tr>
+                                        <tr>                                
+                                            <td>
+                                                <div class="form-group form-check">
+                                                    <input type="radio" name="sm-crust" value="">
+                                                    <label>Focaccia</label>
+                                                </div>
+                                            </td>
+                                            <td>550</td>
+                                            <td>450</td>
+                                            <td>450</td>                                
+                                        </tr>                              
+                                    </tbody>
+                                </table>                            
+                            </div>
+                        </div>
+                        <div class="row padding">
+                            <div class="col-12">
+                                <h5>Your Toppings</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <table class="table table-borderless table-hover table-sm">
+                                    <thead>
+                                        <th scope="col"></th>
+                                        <th scope="col">S</th>
+                                        <th scope="col">M</th>
+                                        <th scope="col">L</th>
+                                    </thead>                            
+                                    <tbody>
+                                        <tr>                                
+                                            <td>
+                                                <div class="form-group form-check">
+                                                    <input type="checkbox">
+                                                    <label>Pepperoni</label>
+                                                </div>
+                                            </td>
+                                            <td>50</td>
+                                            <td>50</td>
+                                            <td>50</td>                                
+                                        </tr>
+                                        <tr>                                
+                                            <td>
+                                                <div class="form-group form-check">
+                                                    <input type="checkbox">
+                                                    <label>Diced Mango</label>
+                                                </div>
+                                            </td>
+                                            <td>70</td>
+                                            <td>50</td>
+                                            <td>50</td>                                
+                                        </tr>
+                                        <tr>                                
+                                            <td>
+                                                <div class="form-group form-check">
+                                                    <input type="checkbox">
+                                                    <label>Peanut Sauce</label>
+                                                </div>
+                                            </td>
+                                            <td>40</td>
+                                            <td>50</td>
+                                            <td>50</td>                                
+                                        </tr>
+                                        <tr>                                
+                                            <td>
+                                                <div class="form-group form-check">
+                                                    <input type="checkbox">
+                                                    <label>Garlic</label>
+                                                </div>
+                                            </td>
+                                            <td>30</td>
+                                            <td>50</td>
+                                            <td>50</td>                                
+                                        </tr>
+                                        <tr>                                
+                                            <td>
+                                                <div class="form-group form-check">
+                                                    <input type="checkbox">
+                                                    <label>Bacon</label>
+                                                </div>
+                                            </td>
+                                            <td>70</td>
+                                            <td>50</td>
+                                            <td>50</td>                                
+                                        </tr>
+                                        <tr>                                
+                                            <td>
+                                                <div class="form-group form-check">
+                                                    <input type="checkbox">
+                                                    <label>Mozzarella</label>
+                                                </div>
+                                            </td>
+                                            <td>40</td>
+                                            <td>50</td>
+                                            <td>50</td>                                
+                                        </tr>                              
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <table class="table table-borderless table-hover table-sm">
+                                    <thead class="thead-hide">
+                                        <th scope="col"></th>
+                                        <th scope="col">S</th>
+                                        <th scope="col">M</th>
+                                        <th scope="col">L</th>
+                                    </thead>                            
+                                    <tbody>
+                                        <tr>                                
+                                            <td>
+                                                <div class="form-group form-check">
+                                                    <input type="checkbox">
+                                                    <label>Salami</label>
+                                                </div>
+                                            </td>
+                                            <td>50</td>
+                                            <td>50</td>
+                                            <td>50</td>                                
+                                        </tr>
+                                        <tr>                                
+                                            <td>
+                                                <div class="form-group form-check">
+                                                    <input type="checkbox">
+                                                    <label>Pineapple</label>
+                                                </div>
+                                            </td>
+                                            <td>30</td>
+                                            <td>50</td>                                
+                                            <td>50</td>
+                                        </tr>
+                                        <tr>                                
+                                            <td>
+                                                <div class="form-group form-check">
+                                                    <input type="checkbox">
+                                                    <label>Ham</label>
+                                                </div>
+                                            </td>
+                                            <td>100</td>
+                                            <td>50</td>
+                                            <td>50</td>                                
+                                        </tr>
+                                        <tr>                                
+                                            <td>
+                                                <div class="form-group form-check">
+                                                    <input type="checkbox">
+                                                    <label>Pork</label>
+                                                </div>
+                                            </td>
+                                            <td>100</td>
+                                            <td>50</td>                                
+                                            <td>50</td>
+                                        </tr>
+                                        <tr>                                
+                                            <td>
+                                                <div class="form-group form-check">
+                                                    <input type="checkbox">
+                                                    <label>Chicken</label>
+                                                </div>
+                                            </td>
+                                            <td>150</td>
+                                            <td>50</td>
+                                            <td>50</td>                                
+                                        </tr>
+                                        <tr>                                
+                                            <td>
+                                                <div class="form-group form-check">
+                                                    <input type="checkbox">
+                                                    <label>Beef</label>
+                                                </div>
+                                            </td>
+                                            <td>150</td>
+                                            <td>50</td>
+                                            <td>50</td>                                
+                                        </tr>                              
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>                                            
                     </div>
                 </div>
-                <div class="row text-center pizza-sizes">
-                    <div class="col-4 pizza-lg-align"></div>
-                    <div class="col-4 pizza-large">
-                        <img src="images/pizza-large.jpg" alt="large">                
-                    </div>
-                    <div class="col-4 pizza-lg-align"></div> 
-                    
-                    <div class="col-4 pizza-md-align"></div>
-                    <div class="col-4 pizza-medium">
-                        <img src="images/pizza-large.jpg" alt="medium">               
-                    </div>
-                    <div class="col-4 pizza-md-align"></div>
-        
-                    <div class="col-4 pizza-sm-align"></div>
-                    <div class="col-4 pizza-small">
-                        <img src="images/pizza-large.jpg" alt="small">
-                    </div> 
-                    <div class="col-4 pizza-sm-align"></div>           
-                </div>
-                <div class="row text-center padding">
-                    <div class="col-4 pizza-lg-align"></div>
-                    <div class="col-4 pizza-large">LARGE</div>
-                    <div class="col-4 pizza-lg-align"></div>
-
-                    <div class="col-4 pizza-md-align"></div>
-                    <div class="col-4 pizza-medium">MEDIUM</div>
-                    <div class="col-4 pizza-md-align"></div>
-
-                    <div class="col-4 pizza-sm-align"></div>
-                    <div class="col-4 pizza-small">SMALL</div>
-                    <div class="col-4 pizza-sm-align"></div>
-                </div>
-                <!--pizza forms: SMALL-->
-                <div class="pizza-design-small">
-                    <div class="row padding">
-                        <div class="col-6 text-left">
-                            <h5>SMALL</h5>
-                        </div>
-                        <div class="col-6 text-right">
-                            <span class="fa fa-times-circle"></span>
-                        </div>
-                    </div>
-                    <div class="row padding">
-                        <div class="col-12 form-group">
-                            <input type="text" class="form-control" placeholder="Name your pizza">
-                        </div>
-                    </div>
-                    <div class="row padding">
-                        <div class="col-12 col-xl-6">
-                            <h5>Choose crust</h5><br>
-                            <table class="table table-borderless table-hover table-sm">                            
-                                <tbody>
-                                    <tr>                                
-                                        <td>
-                                            <div class="form-group form-check">
-                                                <input type="radio" name="crust" value="" checked>
-                                                <label>Thin crust</label>
-                                            </div>
-                                        </td>
-                                        <td>Ksh. 450</td>                                
-                                    </tr>
-                                    <tr>                                
-                                        <td>
-                                            <div class="form-group form-check">
-                                                <input type="radio" name="crust" value="">
-                                                <label>Flatbread crust</label>
-                                            </div>
-                                        </td>
-                                        <td>Ksh. 400</td>                                
-                                    </tr>
-                                    <tr>                                
-                                        <td>
-                                            <div class="form-group form-check">
-                                                <input type="radio" name="crust" value="">
-                                                <label>Thick crust</label>
-                                            </div>
-                                        </td>
-                                        <td>Ksh. 500</td>                                
-                                    </tr>
-                                    <tr>                                
-                                        <td>
-                                            <div class="form-group form-check">
-                                                <input type="radio" name="crust" value="">
-                                                <label>Wood-Fired crust</label>
-                                            </div>
-                                        </td>
-                                        <td>Ksh. 450</td>                                
-                                    </tr>
-                                    <tr>                                
-                                        <td>
-                                            <div class="form-group form-check">
-                                                <input type="radio" name="crust" value="">
-                                                <label>Focaccia</label>
-                                            </div>
-                                        </td>
-                                        <td>Ksh. 550</td>                                
-                                    </tr>                              
-                                </tbody>
-                            </table>                        
-                        </div>
-                        <div class="col-12 col-xl-6">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h5>Your toppings</h5>
-                                    <br>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 col-sm-6">
-                                    <table class="table table-borderless table-hover table-sm">                            
-                                        <tbody>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Pepperoni</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 50</td>                                
-                                            </tr>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Diced Mango</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 70</td>                                
-                                            </tr>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Peanut Sauce</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 40</td>                                
-                                            </tr>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Garlic</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 30</td>                                
-                                            </tr>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Bacon</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 70</td>                                
-                                            </tr>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Mozzarella</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 40</td>                                
-                                            </tr>                              
-                                        </tbody>
-                                    </table>                                
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <table class="table table-borderless table-hover table-sm">                            
-                                        <tbody>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Salami</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 50</td>                                
-                                            </tr>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Pineapple</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 30</td>                                
-                                            </tr>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Ham</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 100</td>                                
-                                            </tr>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Pork</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 100</td>                                
-                                            </tr>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Chicken</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 150</td>                                
-                                            </tr>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Beef</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 150</td>                                
-                                            </tr>                              
-                                        </tbody>
-                                    </table>                                
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row text-center padding">
-                        <div class="col-12 text-center">
-                            <button type="button" class="btn btn-outline-secondary">
-                                <span class="fa fa-plus"></span> Another Pizza
-                            </button>
-                            <button type="button" class="btn btn-secondary">
-                                <span class="fa fa-cart-arrow-down"></span> Checkout
-                              </button>
-                        </div>
-                    </div>
-                </div>                
-                <!--pizza forms: MEDIUM-->
-                <div class="pizza-design-medium">
-                    <div class="row padding">
-                        <div class="col-6 text-left">
-                            <h5>MEDIUM</h5>
-                        </div>
-                        <div class="col-6 text-right">
-                            <span class="fa fa-times-circle"></span>
-                        </div>
-                    </div>
-                    <div class="row padding">
-                        <div class="col-12 form-group">
-                            <input type="text" class="form-control" placeholder="Name your pizza">
-                        </div>
-                    </div>
-                    <div class="row padding">
-                        <div class="col-12 col-xl-6">
-                            <h5>Choose crust</h5><br>
-                            <table class="table table-borderless table-hover table-sm">                            
-                                <tbody>
-                                    <tr>                                
-                                        <td>
-                                            <div class="form-group form-check">
-                                                <input type="radio" name="crust" value="" checked>
-                                                <label>Thin crust</label>
-                                            </div>
-                                        </td>
-                                        <td>Ksh. 550</td>                                
-                                    </tr>
-                                    <tr>                                
-                                        <td>
-                                            <div class="form-group form-check">
-                                                <input type="radio" name="crust" value="">
-                                                <label>Flatbread crust</label>
-                                            </div>
-                                        </td>
-                                        <td>Ksh. 500</td>                                
-                                    </tr>
-                                    <tr>                                
-                                        <td>
-                                            <div class="form-group form-check">
-                                                <input type="radio" name="crust" value="">
-                                                <label>Thick crust</label>
-                                            </div>
-                                        </td>
-                                        <td>Ksh. 600</td>                                
-                                    </tr>
-                                    <tr>                                
-                                        <td>
-                                            <div class="form-group form-check">
-                                                <input type="radio" name="crust" value="">
-                                                <label>Wood-Fired crust</label>
-                                            </div>
-                                        </td>
-                                        <td>Ksh. 550</td>                                
-                                    </tr>
-                                    <tr>                                
-                                        <td>
-                                            <div class="form-group form-check">
-                                                <input type="radio" name="crust" value="">
-                                                <label>Focaccia</label>
-                                            </div>
-                                        </td>
-                                        <td>Ksh. 650</td>                                
-                                    </tr>                              
-                                </tbody>
-                            </table>                        
-                        </div>
-                        <div class="col-12 col-xl-6">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h5>Your toppings</h5>
-                                    <br>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 col-sm-6">
-                                    <table class="table table-borderless table-hover table-sm">                            
-                                        <tbody>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Pepperoni</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 50</td>                                
-                                            </tr>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Diced Mango</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 70</td>                                
-                                            </tr>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Peanut Sauce</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 40</td>                                
-                                            </tr>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Garlic</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 30</td>                                
-                                            </tr>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Bacon</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 70</td>                                
-                                            </tr>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Mozzarella</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 40</td>                                
-                                            </tr>                              
-                                        </tbody>
-                                    </table>                                
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <table class="table table-borderless table-hover table-sm">                            
-                                        <tbody>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Salami</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 50</td>                                
-                                            </tr>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Pineapple</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 30</td>                                
-                                            </tr>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Ham</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 150</td>                                
-                                            </tr>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Pork</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 150</td>                                
-                                            </tr>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Chicken</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 200</td>                                
-                                            </tr>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Beef</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 200</td>                                
-                                            </tr>                              
-                                        </tbody>
-                                    </table>                                
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row text-center padding">
-                        <div class="col-12 text-center">
-                            <button type="button" class="btn btn-outline-secondary">
-                                <span class="fa fa-plus"></span> Another Pizza
-                            </button>
-                            <button type="button" class="btn btn-secondary">
-                                <span class="fa fa-cart-arrow-down"></span> Checkout
-                              </button>
-                        </div>
-                    </div>
-                </div>
-                <!--pizza forms: LARGE-->
-                <div class="pizza-design-large">
-                    <div class="row padding">
-                        <div class="col-6 text-left">
-                            <h5>LARGE</h5>
-                        </div>
-                        <div class="col-6 text-right">
-                            <span class="fa fa-times-circle"></span>
-                        </div>
-                    </div>
-                    <div class="row padding">
-                        <div class="col-12 form-group">
-                            <input type="text" class="form-control" placeholder="Name your pizza">
-                        </div>
-                    </div>
-                    <div class="row padding">
-                        <div class="col-12 col-xl-6">
-                            <h5>Choose crust</h5><br>
-                            <table class="table table-borderless table-hover table-sm">                            
-                                <tbody>
-                                    <tr>                                
-                                        <td>
-                                            <div class="form-group form-check">
-                                                <input type="radio" name="crust" value="" checked>
-                                                <label>Thin crust</label>
-                                            </div>
-                                        </td>
-                                        <td>Ksh. 650</td>                                
-                                    </tr>
-                                    <tr>                                
-                                        <td>
-                                            <div class="form-group form-check">
-                                                <input type="radio" name="crust" value="">
-                                                <label>Flatbread crust</label>
-                                            </div>
-                                        </td>
-                                        <td>Ksh. 600</td>                                
-                                    </tr>
-                                    <tr>                                
-                                        <td>
-                                            <div class="form-group form-check">
-                                                <input type="radio" name="crust" value="">
-                                                <label>Thick crust</label>
-                                            </div>
-                                        </td>
-                                        <td>Ksh. 700</td>                                
-                                    </tr>
-                                    <tr>                                
-                                        <td>
-                                            <div class="form-group form-check">
-                                                <input type="radio" name="crust" value="">
-                                                <label>Wood-Fired crust</label>
-                                            </div>
-                                        </td>
-                                        <td>Ksh. 650</td>                                
-                                    </tr>
-                                    <tr>                                
-                                        <td>
-                                            <div class="form-group form-check">
-                                                <input type="radio" name="crust" value="">
-                                                <label>Focaccia</label>
-                                            </div>
-                                        </td>
-                                        <td>Ksh. 750</td>                                
-                                    </tr>                              
-                                </tbody>
-                            </table>                        
-                        </div>
-                        <div class="col-12 col-xl-6">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h5>Your toppings</h5>
-                                    <br>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 col-sm-6">
-                                    <table class="table table-borderless table-hover table-sm">                            
-                                        <tbody>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Pepperoni</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 50</td>                                
-                                            </tr>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Diced Mango</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 70</td>                                
-                                            </tr>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Peanut Sauce</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 40</td>                                
-                                            </tr>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Garlic</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 30</td>                                
-                                            </tr>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Bacon</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 70</td>                                
-                                            </tr>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Mozzarella</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 40</td>                                
-                                            </tr>                              
-                                        </tbody>
-                                    </table>                                
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <table class="table table-borderless table-hover table-sm">                            
-                                        <tbody>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Salami</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 50</td>                                
-                                            </tr>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Pineapple</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 30</td>                                
-                                            </tr>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Ham</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 200</td>                                
-                                            </tr>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Pork</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 200</td>                                
-                                            </tr>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Chicken</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 250</td>                                
-                                            </tr>
-                                            <tr>                                
-                                                <td>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox">
-                                                        <label>Beef</label>
-                                                    </div>
-                                                </td>
-                                                <td>Ksh. 250</td>                                
-                                            </tr>                              
-                                        </tbody>
-                                    </table>                                
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row text-center padding">
-                        <div class="col-12 text-center">
-                            <button type="button" class="btn btn-outline-secondary">
-                                <span class="fa fa-plus"></span> Another Pizza
-                            </button>
-                            <button type="button" class="btn btn-secondary">
-                                <span class="fa fa-cart-arrow-down"></span> Checkout
-                              </button>
-                        </div>
-                    </div>
-                </div>
-                
-
-
-            </form>
-        </div>
+            </div>               
+        </form>
     </div>
     <!--footer-->
     <footer>
