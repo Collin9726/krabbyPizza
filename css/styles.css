@@ -124,4 +124,18 @@ html, body{
   .pizza-design-form{
     background-color: #f4f4f4;
     padding: 2em;
+    margin-top: 1em;
+  }
+
+  .form-buttons{
+    background-color: #f4f4f4;
+    padding: 2em;
+  }
+
+  .removeOrder{
+    cursor: pointer;
+  }
+
+  .removeOrder:hover{
+    color: brown;
   }
