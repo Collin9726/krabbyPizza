@@ -139,3 +139,12 @@ html, body{
   .removeOrder:hover{
     color: brown;
   }
+
+  label{
+    padding-left: 0.5em;
+  }
+
+  .crust-tip,
+  .size-tip{
+    font-size: smaller;
+  }
