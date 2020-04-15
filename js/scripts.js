@@ -18,6 +18,7 @@ $(document).ready(function(){
     });
     $("button#addPizza").click(function(){        
         $("#new-designs").append(htmlString);
+        $(".checkoutHide").show();
         $(".removeOrder").last().click(function(){
             $(this).parentsUntil("#new-designs").remove();
         });
@@ -38,19 +39,48 @@ $(document).ready(function(){
             });
             $(this).find('input[name="topping"]:checked').each(function(){
                 thisToppings.push(this.value);
-            });
+            });                       
             orderNames.push(thisName);
             orderSizes.push(thisSize);
             orderCrusts.push(thisCrust);
             orderToppings.push(thisToppings);
         });
+        var validateResult=validate(orderSizes,orderCrusts,orderToppings); 
+        if (validateResult===false){
+            return false;
+        }
         var orderObject=new PizzaOrder(orderNames,orderSizes,orderCrusts,orderToppings);
         $("#new-designs").children().remove();
+        $(".checkoutHide").hide();
         ordersDisplay(orderObject);
         clearOrder(orderObject);
     });    
 });
 
+
+function validate(size,crust,toppings){
+    for(var index=0; index<size.length;index+=1){
+        if(size[index].length<1||crust[index].length<1||toppings[index].length<1){
+            alert("You have missing pizza inputs");
+            falseOrderClear();
+            return false;
+        }
+        else if(size[index].length>1||crust[index].length>1){
+            alert("Select only one size and crust per pizza");
+            falseOrderClear();
+            return false;
+        }
+    }      
+}
+
+function falseOrderClear(){
+    for(var orders=0;orders<=orderSizes.length+1;orders+=1){
+        orderNames.pop();
+        orderSizes.pop();
+        orderCrusts.pop();
+        orderToppings.pop();
+    }
+}
 
 
 function ordersDisplay(orderObject){
@@ -93,7 +123,7 @@ function clearOrder(orderObject){
 }
 
 
-/*------HTML INPUT-------*/
+/*------HTML DESIGN FORM-------*/
 var htmlString='<div class="new-design">'+
                     '<div class="pizza-design-form">'+
                         '<div class="row padding">'+                        
@@ -197,6 +227,7 @@ var htmlString='<div class="new-design">'+
                         '<div class="row padding">'+
                             '<div class="col-12">'+
                                 '<h5>Your Toppings</h5>'+
+                                '<span class="toppings-tip">At least one topping</span>'+
                             '</div>'+
                         '</div>'+
                         '<div class="row">'+

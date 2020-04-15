@@ -145,7 +145,8 @@ html, body{
   }
 
   .crust-tip,
-  .size-tip{
+  .size-tip,
+  .toppings-tip{
     font-size: smaller;
   }
 
