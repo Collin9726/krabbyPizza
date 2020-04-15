@@ -59,6 +59,11 @@ $(document).ready(function(){
 
 
 function validate(size,crust,toppings){
+    if(orderSizes.length<1){
+        $(".checkoutHide").hide();
+        alert("Add at least one pizza");        
+        return false;
+    }
     for(var index=0; index<size.length;index+=1){
         if(size[index].length<1||crust[index].length<1||toppings[index].length<1){
             alert("You have missing pizza inputs");
