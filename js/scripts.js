@@ -11,17 +11,15 @@ var orderSizes=[];
 var orderCrusts=[];
 var orderToppings=[];
 
-var orderObject;
-
 
 $(document).ready(function(){
     $(".removeOrder").last().click(function(){
-        $(this).parentsUntil(".new-design").remove();
+        $(this).parentsUntil("#new-designs").remove();
     });
     $("button#addPizza").click(function(){        
         $("#new-designs").append(htmlString);
         $(".removeOrder").last().click(function(){
-            $(this).parentsUntil(".new-design").remove();
+            $(this).parentsUntil("#new-designs").remove();
         });
     });
     $("form#myForm").submit(function(event){
@@ -46,31 +44,51 @@ $(document).ready(function(){
             orderCrusts.push(thisCrust);
             orderToppings.push(thisToppings);
         });
-        orderObject=new PizzaOrder(orderNames,orderSizes,orderCrusts,orderToppings);
-        ordersDisplay();                
+        var orderObject=new PizzaOrder(orderNames,orderSizes,orderCrusts,orderToppings);
+        $("#new-designs").children().remove();
+        ordersDisplay(orderObject);
+        clearOrder(orderObject);
     });    
 });
 
 
 
-function ordersDisplay(){
+function ordersDisplay(orderObject){
     $(".yourOrder").show()
+    $(".orderSummary").append('<div class="col-12 padTop">'+
+                                    '<h5>Orders you just submitted</h5>'+
+                                '</div>');
     for(var orderNum=0; orderNum<orderObject.size.length; orderNum+=1){
         var pizzaNm=orderObject.pizzaName[orderNum];
         var orderSz=orderObject.size[orderNum];
         var orderCr=orderObject.crust[orderNum];
         var orderTopps=orderObject.toppings[orderNum];        
-        $(".orderSummary").append('<div class="col-6 col-md-3 order-bg-color">'+
-                                        '<h5>Order: '+(orderNum+1).toString()+'</h5>'+
-                                        '<h6>Pizza name</h6>'+
-                                        '<p>'+pizzaNm+'</p>'+
-                                        '<h6>Size</h6>'+
-                                        '<p>'+orderSz.join(", ")+'</p>'+
-                                        '<h6>Crust</h6>'+
-                                        '<p>'+orderCr.join(", ")+'</p>'+
-                                        '<h6>Toppings</h6>'+
-                                        '<p>'+orderTopps.join(", ")+'</p><br><br>'+
+        $(".orderSummary").append('<div class="col-12 col-md-6 col-lg-3 padTop">'+
+                                        '<div class="order-bg-color">'+
+                                            '<h5>Order: '+(orderNum+1).toString()+'</h5>'+
+                                            '<h6>Pizza name</h6>'+
+                                            '<p>'+pizzaNm+'</p>'+
+                                            '<h6>Size</h6>'+
+                                            '<p>'+orderSz.join(", ")+'</p>'+
+                                            '<h6>Crust</h6>'+
+                                            '<p>'+orderCr.join(", ")+'</p>'+
+                                            '<h6>Toppings</h6>'+
+                                            '<p>'+orderTopps.join(", ")+'</p><br><br>'+
+                                        '</div>'+
                                     '</div>');
+    }
+}
+
+function clearOrder(orderObject){
+    for(var index=0; index<=orderObject.size.length+1; index+=1){
+        orderObject.pizzaName.pop();
+        orderObject.size.pop();
+        orderObject.crust.pop();
+        orderObject.toppings.pop();
+        orderNames.pop();
+        orderSizes.pop();
+        orderCrusts.pop();
+        orderToppings.pop();
     }
 }
 
@@ -85,7 +103,7 @@ var htmlString='<div class="new-design">'+
                         '</div>'+
                         '<div class="row padding">'+
                             '<div class="col-12 form-group">'+
-                                '<input type="text" class="form-control" placeholder="Name your pizza" id="pizza-name">'+
+                                '<input type="text" class="form-control" placeholder="Name your pizza" id="pizza-name" required>'+
                             '</div>'+
                         '</div>'+
                         '<div class="row">'+

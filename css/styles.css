@@ -158,8 +158,11 @@ html, body{
   }
 
   .order-bg-color{
-    background-color: #f4f4f4;
-    margin-left: 1em;
-    margin-right: 1em;
+    background-color: #f4f4f4;      
     padding: 1em;
+    height: 100%;
+  }
+
+  .padTop{
+    margin-top: 1em;
   }
