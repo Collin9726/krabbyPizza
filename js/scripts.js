@@ -1,3 +1,19 @@
+function PizzaOrder(name,size,crust,toppings){
+    this.pizzaName=name;
+    this.size=size;
+    this.crust=crust;
+    this.toppings=toppings;
+    this.address;
+}
+
+var orderNames=[];
+var orderSizes=[];
+var orderCrusts=[];
+var orderToppings=[];
+
+var orderObject;
+
+
 $(document).ready(function(){
     $(".removeOrder").last().click(function(){
         $(this).parentsUntil(".new-design").remove();
@@ -8,9 +24,55 @@ $(document).ready(function(){
             $(this).parentsUntil(".new-design").remove();
         });
     });
+    $("form#myForm").submit(function(event){
+        event.preventDefault();
+        $(".new-design").each(function(){
+            var thisName;
+            var thisSize=[];
+            var thisCrust=[];
+            var thisToppings=[];
+            thisName=$(this).find('input#pizza-name').val();
+            $(this).find('input[name="size"]:checked').each(function(){
+                thisSize.push(this.value);
+            });
+            $(this).find('input[name="crust"]:checked').each(function(){
+                thisCrust.push(this.value);
+            });
+            $(this).find('input[name="topping"]:checked').each(function(){
+                thisToppings.push(this.value);
+            });
+            orderNames.push(thisName);
+            orderSizes.push(thisSize);
+            orderCrusts.push(thisCrust);
+            orderToppings.push(thisToppings);
+        });
+        orderObject=new PizzaOrder(orderNames,orderSizes,orderCrusts,orderToppings);
+        ordersDisplay();                
+    });    
 });
 
 
+
+function ordersDisplay(){
+    $(".yourOrder").show()
+    for(var orderNum=0; orderNum<orderObject.size.length; orderNum+=1){
+        var pizzaNm=orderObject.pizzaName[orderNum];
+        var orderSz=orderObject.size[orderNum];
+        var orderCr=orderObject.crust[orderNum];
+        var orderTopps=orderObject.toppings[orderNum];        
+        $(".orderSummary").append('<div class="col-6 col-md-3 order-bg-color">'+
+                                        '<h5>Order: '+(orderNum+1).toString()+'</h5>'+
+                                        '<h6>Pizza name</h6>'+
+                                        '<p>'+pizzaNm+'</p>'+
+                                        '<h6>Size</h6>'+
+                                        '<p>'+orderSz.join(", ")+'</p>'+
+                                        '<h6>Crust</h6>'+
+                                        '<p>'+orderCr.join(", ")+'</p>'+
+                                        '<h6>Toppings</h6>'+
+                                        '<p>'+orderTopps.join(", ")+'</p><br><br>'+
+                                    '</div>');
+    }
+}
 
 
 /*------HTML INPUT-------*/
@@ -23,7 +85,7 @@ var htmlString='<div class="new-design">'+
                         '</div>'+
                         '<div class="row padding">'+
                             '<div class="col-12 form-group">'+
-                                '<input type="text" class="form-control" placeholder="Name your pizza" id="pizzaName">'+
+                                '<input type="text" class="form-control" placeholder="Name your pizza" id="pizza-name">'+
                             '</div>'+
                         '</div>'+
                         '<div class="row">'+
@@ -31,15 +93,15 @@ var htmlString='<div class="new-design">'+
                                 '<h5>Select size</h5>'+
                                 '<span class="size-tip">Choose one pizza size</span><br><br>'+
                                 '<div class="form-group form-check">'+
-                                    '<input type="checkbox" name="size" value="large" checked>'+
+                                    '<input type="checkbox" name="size" value="Large">'+
                                     '<label>Large</label>'+
                                 '</div>'+
                                 '<div class="form-group form-check">'+
-                                    '<input type="checkbox" name="size" value="medium">'+
+                                    '<input type="checkbox" name="size" value="Medium">'+
                                     '<label>Medium</label>'+
                                 '</div>'+
                                 '<div class="form-group form-check">'+
-                                    '<input type="checkbox" name="size" value="small">'+
+                                    '<input type="checkbox" name="size" value="Small">'+
                                     '<label>Small</label>'+
                                 '</div>'+
                                 '<div class="row padding"></div>'+
@@ -58,7 +120,7 @@ var htmlString='<div class="new-design">'+
                                         '<tr>'+                                
                                             '<td>'+
                                                 '<div class="form-group form-check">'+
-                                                    '<input type="checkbox" name="crust" value="Thin" checked>'+
+                                                    '<input type="checkbox" name="crust" value="Thin crust">'+
                                                     '<label>Thin crust</label>'+
                                                 '</div>'+
                                             '</td>'+
@@ -69,7 +131,7 @@ var htmlString='<div class="new-design">'+
                                         '<tr>'+                                
                                             '<td>'+
                                                 '<div class="form-group form-check">'+
-                                                    '<input type="checkbox" name="crust" value="Flatbread">'+
+                                                    '<input type="checkbox" name="crust" value="Flatbread crust">'+
                                                     '<label>Flatbread crust</label>'+
                                                 '</div>'+
                                             '</td>'+
@@ -80,7 +142,7 @@ var htmlString='<div class="new-design">'+
                                         '<tr>'+                                
                                             '<td>'+
                                                 '<div class="form-group form-check">'+
-                                                    '<input type="checkbox" name="crust" value="Thick">'+
+                                                    '<input type="checkbox" name="crust" value="Thick crust">'+
                                                     '<label>Thick crust</label>'+
                                                 '</div>'+
                                             '</td>'+
@@ -91,7 +153,7 @@ var htmlString='<div class="new-design">'+
                                         '<tr>'+                                
                                             '<td>'+
                                                 '<div class="form-group form-check">'+
-                                                    '<input type="checkbox" name="crust" value="Wood-Fired">'+
+                                                    '<input type="checkbox" name="crust" value="Wood-Fired crust">'+
                                                     '<label>Wood-Fired crust</label>'+
                                                 '</div>'+
                                             '</td>'+
@@ -143,7 +205,7 @@ var htmlString='<div class="new-design">'+
                                         '<tr>'+                                
                                             '<td>'+
                                                 '<div class="form-group form-check">'+
-                                                    '<input type="checkbox" name="topping" value="Mango">'+
+                                                    '<input type="checkbox" name="topping" value="Diced Mango">'+
                                                     '<label>Diced Mango</label>'+
                                                 '</div>'+
                                             '</td>'+
@@ -154,7 +216,7 @@ var htmlString='<div class="new-design">'+
                                         '<tr>'+                                
                                             '<td>'+
                                                 '<div class="form-group form-check">'+
-                                                    '<input type="checkbox" name="topping" value="Peanut">'+
+                                                    '<input type="checkbox" name="topping" value="Peanut Sauce">'+
                                                     '<label>Peanut Sauce</label>'+
                                                 '</div>'+
                                             '</td>'+

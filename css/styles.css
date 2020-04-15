@@ -148,3 +148,18 @@ html, body{
   .size-tip{
     font-size: smaller;
   }
+
+  .yourOrder{
+    display: none;
+  }
+
+  .yourOrder p{
+    font-style: italic;
+  }
+
+  .order-bg-color{
+    background-color: #f4f4f4;
+    margin-left: 1em;
+    margin-right: 1em;
+    padding: 1em;
+  }
