@@ -159,11 +159,21 @@ html, body{
   }
 
   .order-bg-color{
-    background-color: #f4f4f4;      
+    background-color: #e3e4ee;      
     padding: 1em;
     height: 100%;
+    position: relative;
   }
 
   .padTop{
     margin-top: 1em;
+  }
+
+  #orderTotals{
+    font-size: 1.5em;    
+  }
+
+  .bottom-align{
+    position: absolute;
+    bottom: 0em;
   }
