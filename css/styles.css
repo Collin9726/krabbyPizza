@@ -117,6 +117,10 @@ html, body{
     color: black;
   }  
 
+  #deliveryForm input{
+    color: black;
+  }
+
   .pizza-sizes{
     margin-bottom: 1em;
   }
@@ -171,6 +175,10 @@ html, body{
 
   #orderTotals{
     font-size: 1.5em;    
+  }
+
+  .grand-total{
+    font-size: 1.8em;    
   }
 
   .bottom-align{

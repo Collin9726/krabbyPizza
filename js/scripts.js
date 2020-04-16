@@ -6,11 +6,24 @@ function PizzaOrder(name,size,crust,toppings){
     this.address;
 }
 
+function Address(fName,lName,house,street,town){
+    this.fName=fName;
+    this.lName=lName;
+    this.house=house;
+    this.street=street;
+    this.town=town;
+}
+
+Address.prototype.fullName=function(){
+    return this.fName + " " + this.lName;
+}
+
 var orderNames=[];
 var orderSizes=[];
 var orderCrusts=[];
 var orderToppings=[];
 var orderPrices=[];
+var grandTotalsArray=[];
 
 
 $(document).ready(function(){
@@ -23,7 +36,7 @@ $(document).ready(function(){
         $(".removeOrder").last().click(function(){
             $(this).parentsUntil("#new-designs").remove();
         });
-    });
+    });    
     $("form#myForm").submit(function(event){
         event.preventDefault();
         $(".new-design").each(function(){
@@ -53,9 +66,12 @@ $(document).ready(function(){
         var orderObject=new PizzaOrder(orderNames,orderSizes,orderCrusts,orderToppings);
         $("#new-designs").children().remove();
         $(".checkoutHide").hide();
-        ordersDisplay(orderObject);
+        $(".yourAddress").remove();
+        $(".deliveryAsk").remove();
+        ordersDisplay(orderObject);        
         clearOrder(orderObject);
-    });    
+        $(".deliveryDiv").remove();        
+    });        
 });
 
 
@@ -123,7 +139,74 @@ function ordersDisplay(orderObject){
                                     '<div>'+
                                         '<span id="orderTotals">Total: Ksh. '+orderTotals+'</span><br><br>'+
                                     '</div>'+
+                                '</div>'+
+                                '<div class="col-12 deliveryAsk">'+
+                                    '<span id="question">Want your orders delivered at an extra Ksh. 200? </span>'+
+                                    '<button type="button" class="btn btn-sm btn-outline-secondary yes">Yes</button>'+
+                                    ' '+
+                                    '<button type="button" class="btn btn-sm btn-secondary no">No</button>'+
                                 '</div>');
+    $(".no").click(function(){
+        $(".deliveryAsk").remove();
+        $(".deliveryDiv").remove();
+    });
+    $(".yes").click(function(){        
+        $(".deliveryAsk").remove();
+        $(".deliveryDiv").remove();
+        $(".yourOrder").append('<div class="deliveryDiv">'+
+                                    '<div class="row">'+
+                                        '<div class="col-12">'+
+                                            '<form id="deliveryForm">'+
+                                                '<h5>Your Address</h5>'+
+                                                '<div class="form-group">'+
+                                                    '<input type="text" class="form-control" id="firstName" placeholder="First Name" required>'+
+                                                '</div>'+
+                                                '<div class="form-group">'+
+                                                    '<input type="text" class="form-control" id="lastName" placeholder="Last Name" required>'+
+                                                '</div>'+
+                                                '<div class="form-group">'+
+                                                    '<input type="text" class="form-control" id="house" placeholder="House Number" required>'+
+                                                '</div>'+
+                                                '<div class="form-group">'+
+                                                    '<input type="text" class="form-control" id="street" placeholder="Street" required>'+
+                                                '</div>'+
+                                                '<div class="form-group">'+
+                                                    '<input type="text" class="form-control" id="town" placeholder="Town" required>'+
+                                                '</div>'+
+                                                '<button type="submit" class="btn btn-secondary">Submit</button>'+
+                                            '</form>'+
+                                        '</div>'+
+                                    '</div>'+
+                                '</div>');    
+        $(document).on("submit","#deliveryForm",function(e){
+            e.preventDefault();
+            var inputtedFName=$("input#firstName").val();
+            var inputtedLName=$("input#lastName").val();
+            var inputtedHouse=$("input#house").val();
+            var inputtedStreet=$("input#street").val();
+            var inputtedTown=$("input#town").val();
+            $(".deliveryDiv").remove();
+            var addressObject=new Address(inputtedFName,inputtedLName,inputtedHouse,inputtedStreet,inputtedTown);
+            $(".yourOrder").append('<div class="yourAddress">'+
+                                        '<div class="row">'+
+                                            '<div class="col-12">'+
+                                                '<h5>Your orders will be delivered to this address after payment:</h5>'+
+                                                '<p>Name: '+addressObject.fullName()+'</p>'+
+                                                '<p>House: '+addressObject.house+'</p>'+
+                                                '<p>Street: '+addressObject.street+'</p>'+
+                                                '<p>Town: '+addressObject.town+'</p><br>'+
+                                                '<p>Delivery fee: Ksh. 200</p>'+
+                                            '</div>'+
+                                        '</div>'+
+                                        '<div class="row">'+
+                                            '<div class="col-12">'+
+                                                '<span class="grand-total">Total + Delivery: Ksh. '+grandTotalPrice()+'</span>'+
+                                            '</div>'+
+                                        '</div>'+
+                                    '</div>');            
+            $(this).off(e);
+        });
+    });    
 }
 
 
@@ -133,7 +216,17 @@ function totalPrice(){
         total=total+orderPrice;
     });
     clearOrderPrices();
+    grandTotalsArray.push(total);
     return total;
+}
+
+function grandTotalPrice(){
+    var total=0;
+    grandTotalsArray.forEach(function(grandTotal){
+        total=total+grandTotal;
+    });
+    var totalAndDelivery=total+200;
+    return totalAndDelivery;
 }
 
 function clearOrderPrices(){
