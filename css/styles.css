@@ -86,6 +86,7 @@ html, body{
   
   #footr{
     font-family: hothamFont;
+    font-size: xx-large;
   }
   
   footer{
@@ -93,6 +94,7 @@ html, body{
     color: #d5d5d5;
     padding-top: 1rem;
     margin-top: 2em;
+    font-size: large;
   }
 
   hr.light{
@@ -163,7 +165,7 @@ html, body{
   }
 
   .order-bg-color{
-    background-color: #e3e4ee;      
+    background-color: lightgray;      
     padding: 1em;
     height: 100%;
     position: relative;

@@ -342,10 +342,6 @@ function Small(){
 }
 
 
-
-
-
-
 /*------HTML DESIGN FORM-------*/
 var htmlString='<div class="new-design">'+
                     '<div class="pizza-design-form">'+
